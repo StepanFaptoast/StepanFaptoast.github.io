@@ -50,6 +50,13 @@
         });
 
         function newName() {
+          var nameran = Math.random()
+          if (nameran < 0.05) {
+            $("#nameval").text("ya boy legendary harry");
+          }
+          else {
+            $("#nameval").text("Harrison");
+          }
           var random1 = meme1[Math.floor(Math.random()*meme1.length)];
           var random2 = meme2[Math.floor(Math.random()*meme2.length)];
           //console.log(random1);
@@ -71,7 +78,7 @@
         <h1>What Did Harrison do this Weekend?</h1>
         <a class="waves-effect waves-light btn-large pink darken-2" href="#" onclick="newName();">Click Here to Find Out</a>
       </center>
-      <center style="font-family: 'Comic Sans MS'; display: none;" id="response"><h1>This Weekend Harrison <div id="meme12"></div> <div id="meme13"></div></h1>
+      <center style="font-family: 'Comic Sans MS'; display: none;" id="response"><h1>This Weekend <div id="nameval"></div> <div id="meme12"></div> <div id="meme13"></div></h1>
       <a class="waves-effect waves-light btn-large pink darken-2" href="#" onclick="newName();">What Else Did He Do?</a>
       </center>
 
