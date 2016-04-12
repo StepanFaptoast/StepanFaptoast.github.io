@@ -1,0 +1,78 @@
+ <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Harrison's Life</title>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+        <link rel="stylesheet" href="css/materialize.min.css">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <style>
+      .center2 {
+        top:40%;
+        left:50%;
+        padding:5px;
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        position:absolute;
+      }
+      body {
+        -webkit-transition:background-color 1s ease;
+        -moz-transition:background-color 5s ease;
+        -o-transition:background-color 5s ease;
+        transition:background-color 5s ease;
+      }
+
+      </style>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="js/materialize.min.js"></script>
+      <script type="text/javascript">
+
+        meme1 = ['Kissing', 'Fellatioed', 'Masturbated', 'Gang Banged', 'Sexually roleplay\u200eed', 'Amplexused', 'Anal sexed', 'Ass to mouthed', 'Made out with', 'titty fucked', 'barebacked', 'got to third base with', 'Bukkaked', 'nipple stimulated', 'blew', 'oral sexed', 'sucked off', 'cleveland steamered', 'dirty sanchezed', 'ate out', 'pearl necklaced', 'was pegged by', 'pelvic thrusted', 'penis fenced with', 'gave a prostate massage to', 'had public sex with', 'did facesitting with', 'dirty talked with', 'donkey punched', 'deep throated', 'erotic electrostimulated', 'erotically spanked', 'facialed', 'felched', 'fellatioed', 'fingered', 'fisted', 'frotted with', 'exchanged saliva with', 'was scrotally inflated by', 'seducted', 'snowballed', 'groped', 'was given a handjob by', 'got a hickey from', 'was cock and ball tortured by', 'kissed', 'was turkey slapped by', 'was given a mexican cumslide by', 'was given a kexican mumslide by', 'teabagged', 'creampied', 'was given african goggles by', 'gave a rusty trombone to', 'was sounded by', 'held hands with', 'had sex in the missionary position with the lights off for the sole purpose of procreation with', 'got super hot succ of dicc from'];
+        function getRandomColor() {
+          var letters = '0123456789ABCDEF'.split('');
+          var color = '#';
+          for (var i = 0; i < 6; i++ ) {
+              color += letters[Math.floor(Math.random() * 16)];
+          }
+          $("body").css("background-color",color);
+        }
+
+        $( document ).ready(function() {
+            getRandomColor();
+            setInterval(getRandomColor, 5000);
+
+
+        });
+
+        function newName() {
+          var random1 = meme1[Math.floor(Math.random()*meme1.length)];
+          console.log(random1);
+          $("#meme12").text(random1);
+          $("#initial").hide();
+          $("#response").show();
+
+          var msg = new SpeechSynthesisUtterance('This weekend Harrison ' + random1);
+          window.speechSynthesis.speak(msg);
+
+        }
+      </script>
+    </head>
+    
+    <body>
+      <div class="center2">
+      <center style="font-family: 'Comic Sans MS'" id="initial">
+        <h1>What Did Harrison do this Weekend?</h1>
+        <a class="waves-effect waves-light btn-large pink darken-2" href="#" onclick="newName();">Click Here to Find Out</a>
+      </center>
+      <center style="font-family: 'Comic Sans MS'; display: none;" id="response"><h1>This Weekend Harrison <div id="meme12"></div> <div id="meme13"></div></h1>
+      <a class="waves-effect waves-light btn-large pink darken-2" href="#" onclick="newName();">What Else Did He Do?</a>
+      </center>
+
+      </div>
+      <!--Import jQuery before materialize.js-->
+    </body>
+  </html>
